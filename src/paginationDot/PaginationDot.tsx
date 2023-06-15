@@ -1,3 +1,16 @@
-export const PaginationDot = (): JSX.Element => {
-  return <div>This is Pagination Dot</div>;
+type HandlePaginationDotType = (index: number) => void;
+
+export const PaginationDot = ({
+  index,
+  handlePaginationDotClick,
+}: {
+  index: number;
+  handlePaginationDotClick: HandlePaginationDotType;
+}): JSX.Element => {
+  return (
+    <button
+      className="paginationDot"
+      onClick={() => handlePaginationDotClick(index)}
+    ></button>
+  );
 };
